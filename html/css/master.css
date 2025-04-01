@@ -1,9 +1,8 @@
 .building {
-    width:300px;
+    width:250px;
     height:auto;
 }
 
-#playArea{
-    width: 100%;
-    height: auto;
+.col-xs-3-center {
+    margin: 30px;
 }
