@@ -6,3 +6,32 @@
 .col-xs-3-center {
     margin: 30px;
 }
+
+#header {
+    margin-bottom: 50px;
+    padding:10px;
+    background-color: #2E099B;
+    border-radius: 25px;
+}
+
+#happiness {
+    height: auto;
+    width: 200px;
+}
+
+#money {
+    background-color: blue;
+    border-radius: 25px;
+    color: rgb(0, 255, 0);
+    font-weight: bold;
+    -webkit-text-stroke: 3px black;
+    font-family:sans-serif, Arial;
+    text-shadow:
+    3px 3px 0 #000,
+    -3px 3px 0 #000,
+    -3px -3px 0 #000,
+    3px -3px 0 #000;
+}
+#background {
+    background-color: lightgreen;
+}
