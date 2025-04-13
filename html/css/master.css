@@ -36,3 +36,26 @@
     background-color: lightgreen;
     
 }
+.btn-light{
+    height: 250px;
+    width: 250px;
+    
+}
+#icons {
+    height: auto;
+    width: 150px;
+}
+.buyButton {
+    border-radius: 25px;
+}
+.back {
+    height: 250px;
+    width: 400px;
+    border-radius: 25px;
+    background-color: #333333;
+    color: white;
+    font-weight: bold;;
+}
+#happinessBar {
+    height:100px;
+}
