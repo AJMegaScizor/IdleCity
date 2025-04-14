@@ -59,3 +59,17 @@
 #happinessBar {
     height:100px;
 }
+#incomeRate {
+    color: rgb(0, 255, 0);
+    font-weight: bold;
+    -webkit-text-stroke: 3px black;
+    font-family:sans-serif, Arial;
+    text-shadow:
+    3px 3px 0 #000,
+    -3px 3px 0 #000,
+    -3px -3px 0 #000,
+    3px -3px 0 #000;
+}
+.display-1 {
+    font-size: 1000%;
+}
