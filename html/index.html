@@ -41,7 +41,7 @@
                             <img src="images/building.png" class="building" alt="building">
                         </button>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"><h1 class="display-6">Upgrade</h1></a></li>
+                          <li><a class="dropdown-item" href="#"><h1 class="display-5">Upgrade </h1> <h3>Cost: $1000</h3><h3>Stats: +$100 / Sec</h3></a></li>
                           <li><a class="dropdown-item" href="#"><h1 class="display-6">Demolish</h1></a></li>
                         </ul>
                       </div>
@@ -128,8 +128,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
     <script type="text/javascript">
-        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     </script>
     
 </body>
