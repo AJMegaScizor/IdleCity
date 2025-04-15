@@ -18,10 +18,12 @@
     height: auto;
     width: 200px;
 }
-
-#money {
+#moneyBox {
     background-color: blue;
     border-radius: 25px;
+}
+#money {
+    
     color: rgb(0, 255, 0);
     font-weight: bold;
     -webkit-text-stroke: 3px black;
