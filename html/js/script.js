@@ -1,10 +1,18 @@
-let number = 0;
-let rate = 1;
+let rate = 0;
 let happiness = 0;
+var KEY = 'changeMoney';
+var num = localStorage[KEY];
+const plotArray = new Array(16);
+
+window.onLoad = function() {
+    for (let i = 0; i < plotArray.length; i++) {
+        plotArray[i] = new plot("images/emptylot.png", 0, 0, i)
+    }
+}
 
 function changeMoney() {
-    var KEY = 'changeMoney';
-    var num = localStorage[KEY];
+    KEY = 'changeMoney';
+    num = localStorage[KEY];
     if (!num) {
         num = 0;
     }
@@ -19,3 +27,19 @@ function changeMoney() {
 }
 //localStorage.clear();
 setInterval(changeMoney, 1000);
+function buildBank(img) {
+    document.getElementById("img").src="images/bread.png";
+}
+
+class plot {
+    building;
+    moneyGen;
+    happiness;
+    plotNum;
+    constructor (building, moneyGen, happiness, plotNum) {
+        this.building = building;
+        this.moneyGen = moneyGen;
+        this.happiness = happiness;
+        this.plotNum = plotNum;
+    }
+}
