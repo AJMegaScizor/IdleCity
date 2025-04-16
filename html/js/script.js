@@ -4,10 +4,19 @@ var KEY = 'changeMoney';
 var num = localStorage[KEY];
 const plotArray = new Array(16);
 
-window.onLoad = function() {
+
+function startButton () {
     for (let i = 0; i < plotArray.length; i++) {
-        plotArray[i] = new plot("images/emptylot.png", 0, 0, i)
+        plotArray[i] = new plot("images/apartment.png", 0, 0, i)
     }
+    console.log("something");
+}
+
+function setImage(plotNum) {
+    var id = "b" + plotNum;
+    const element = document.getElementById(id);
+    element.src=String(plotArray[plotNum].getBuilding());
+
 }
 
 function changeMoney() {
@@ -41,5 +50,8 @@ class plot {
         this.moneyGen = moneyGen;
         this.happiness = happiness;
         this.plotNum = plotNum;
+    }
+    getBuilding() {
+        return this.building;
     }
 }
