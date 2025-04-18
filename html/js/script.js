@@ -10,11 +10,15 @@ class plot {
     getBuilding() {
         return this.building;
     }
+    demolish() {
+        this.building = "images/emptylot.png";
+        this.moneyGen = 0;
+        this.happiness = 0;
+    }
     bank() {
         this.building = "images/apartment.png";
         this.moneyGen = 5;
-        this.happiness = 1;
-
+        this.happiness = 20;
     }
 }
 
@@ -24,6 +28,10 @@ var KEY = 'changeMoney';
 var num = localStorage[KEY];
 let parsedArray = JSON.parse(localStorage.getItem("plotArray"));
 let tempPlotNum = localStorage.getItem("tempPlotNum");
+var hasStarted = localStorage.getItem("hasStarted");
+if (hasStarted === null) {
+    hasStarted = String(false);
+}
 if (parsedArray) {
     plotArray = parsedArray.map(obj => new plot(obj.building, obj.moneyGen, obj.happiness));
 } else {
@@ -36,11 +44,12 @@ function startButton () {
     for (let i = 0; i < plotArray.length; i++) {
         plotArray[i] = new plot("images/emptylot.png", 0, 0)
     }
-    console.log(plotArray[0].getBuilding());
     localStorage.setItem("plotArray", JSON.stringify(plotArray));
     console.log("something");
     localStorage[KEY] = 100;
     window.location.href="index.html";
+    hasStarted = String(true);
+    localStorage.setItem("hasStarted", hasStarted);
 }
 
 function setImage(plotNum) {
@@ -50,25 +59,46 @@ function setImage(plotNum) {
 }
 
 function changeMoney() {
-    KEY = 'changeMoney';
-    num = localStorage[KEY];
-    if (!num) {
-        num = 0;
-    }
-    rate = 0;
-    for (const p of plotArray) {
-        rate += p.moneyGen;
-    }
-    const element = document.getElementById("money");
-    if (element) {
-        element.innerHTML = "$" + num;
-        let num2 = Number(num);
-        num2+=rate;
-        num = num2;
-        localStorage[KEY] = num
+    if (hasStarted === String(true)) {
+        KEY = 'changeMoney';
+        num = localStorage[KEY];
+        if (!num) {
+            num = 0;
+        }
+        rate = 0;
+        happiness = 0
+        for (const p of plotArray) {
+            if (p.moneyGen) {
+                rate += p.moneyGen;
+                happiness += p.happiness
+            }
+        }
+        const emoji = document.getElementById("happiness");
+        const element = document.getElementById("money");
+        if (emoji) {
+            if (happiness < 33) {
+                emoji.src = "images/sad.png";
+            }
+            if (happiness > 33) {
+                emoji.src = "images/neutral.png";
+            }
+            if (happiness > 66) {
+                emoji.src = "images/happy.png";
+            }
+        }
+        if (element) {
+            element.innerHTML = "$" + num;
+            let num2 = Number(num);
+            num2+=rate;
+            num = num2;
+            localStorage[KEY] = num
+        }
     }
 }
-
+function demolish(plotNum) {
+    plotArray[plotNum].demolish();
+    localStorage.setItem("plotArray", JSON.stringify(plotArray));
+}
 function upgrade(plotNum) {
     tempPlotNum = plotNum;
     localStorage.setItem("tempPlotNum", plotNum);
