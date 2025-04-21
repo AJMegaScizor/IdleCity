@@ -121,12 +121,13 @@ function buildBank() {
 
 function happinessInfo() {
     const tBody = document.getElementById("body");
-    let body = '<tr mt-5><th scope="row"><img src="images/bread.png" id="icons" alt="bread"></th> <td>Bank</td> </tr>';
+    let body = '<tr mt-5><th scope="row"><img src="images/bread.png" id="icons" alt="bread"></th> <td>bank</td> </tr>';
     tBody.innerHTML=body;
-    console.log("something happened");
 
 }
-
+if (document.getElementById("body")) {
+    document.getElementById("body").addEventListener("load", happinessInfo());
+}
 
 //localStorage.clear();
 setInterval(changeMoney, 1000);
