@@ -118,5 +118,15 @@ function buildBank() {
     localStorage.setItem("tempPlotNum", null);
     window.location.href = "index.html";
 }
+
+function happinessInfo() {
+    const tBody = document.getElementById("body");
+    let body = '<tr mt-5><th scope="row"><img src="images/bread.png" id="icons" alt="bread"></th> <td>Bank</td> </tr>';
+    tBody.innerHTML=body;
+    console.log("something happened");
+
+}
+
+
 //localStorage.clear();
 setInterval(changeMoney, 1000);
