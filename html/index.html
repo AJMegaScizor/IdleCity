@@ -11,11 +11,12 @@
     <script src="js/script.js"></script>
 
     <div class="container-fluid position-absolute top-0 bottom-0 d-flex flex-column align-items-center" id="background">
+
         <div class="container-fluid fixed-top" id="header">
                     <div class="row text-center align-items-center">
                         <div class="col-2 " id="temp">
                             <div id="bCountBox">
-                                <h1 class="display-6 text-white">
+                                <h1 class="fs-3 fs-md-1 text-white">
                                 Buildings
                                 <div id="buildingCount">
                                     0/16
@@ -23,17 +24,19 @@
                                 </h1>
                             </div>
                         </div>
-                        <div class="col-8">
+                        <div class="col-8 d-flex justify-content-center align-items-center">
                             <div id="moneyBox">
                                 <h1 class="display-1" id="money"></h1>
                             </div>
                         </div>
                         <div class="col-2">
                             <h1 class="display-6 text-white">Citizens:</h1>
-                            <img src="images/sad.png" id="happiness" alt="emotion">
+                            <img src="images/sad.png" class="img-fluid" id="happiness" alt="emotion">
                         </div>
                     </div>
         </div>
+
+
         <div class="container-fluid align-items-center" id="buildings">
             <div class="row gx-5">
                 <div class="col d-flex justify-content-center">
@@ -225,14 +228,14 @@
         </div>
         <div class="container-fluid mt-5 fixed-bottom" id="footer">
             <div class="row justify-content-center mx-5">
-                <div class="col-2 mx-5 text-center">
+                <div class="col-6 col-sm-4 col-md-3 text-center my-2">
                     <a href="happiness.html">
-                        <button type="button" class="navigation"><img src="images/happiness.png" style="height:auto; width: 250px;"></button>
+                        <button type="button" class="navigation footer-icon"><img src="images/happiness.png" class="img-fluid w-100 w-sm-75 w-md-50 w-lg-25 footer-icon"></button>
                     </a>
                 </div>
-                <div class="col-2 mx-5">
+                <div class="col-6 col-sm-4 col-md-3 text-center my-2">
                     <a href="income.html">
-                        <button type="button" class="navigation"><img src="images/income.png" style="height: auto; width: 250px;"></button>
+                        <button type="button" class="navigation footer-icon"><img src="images/income.png" class="img-fluid w-100 w-sm-75 w-md-50 w-lg-25 footer-icon"></button>
                     </a>
                 </div>
             </div>
