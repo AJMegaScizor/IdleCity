@@ -188,6 +188,22 @@ function happinessInfo() {
     tBody.innerHTML=body;
 }
 
+function adjustBuildingPadding() {
+    const header = document.getElementById('header');
+    const footer = document.getElementById('footer');
+    const buildings = document.getElementById('buildings');
+
+    const headerHeight = header.offsetHeight;
+    const footerHeight = footer.offsetHeight;
+
+    buildings.style.paddingTop = `${headerHeight + 20}px`;  // Add extra spacing if needed
+    buildings.style.paddingBottom = `${footerHeight + 20}px`;
+}
+
+// Run on page load
+window.addEventListener('load', adjustBuildingPadding);
+// Run on resize (optional but recommended)
+window.addEventListener('resize', adjustBuildingPadding);
 
 //localStorage.clear();
 setInterval(changeMoney, 1000);
