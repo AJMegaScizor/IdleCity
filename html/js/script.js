@@ -86,13 +86,24 @@ function changeMoney() {
                 emoji.src = "images/happy.png";
             }
         }
+        if (document.getElementById("buildingCount")) {
+            const counter = document.getElementById("buildingCount");
+            var count = 0;
+            for (var p of plotArray) {
+                if (p.building !== "images/emptylot.png") {
+                    count++;
+                }
+            }
+            counter.innerHTML = `${count} / 16`;
+        }
+
         if (element) {
             element.innerHTML = "$" + num;
-            let num2 = Number(num);
-            num2+=rate;
-            num = num2;
-            localStorage[KEY] = num
         }
+        let num2 = Number(num);
+        num2+=rate;
+        num = num2;
+        localStorage[KEY] = num
     }
 }
 function demolish(plotNum) {
@@ -122,6 +133,28 @@ function buildBank() {
 if (document.getElementById("body")) {
     document.getElementById("body").addEventListener("load", happinessInfo());
 }
+if (document.getElementById("incomeRate")) {
+    document.getElementById("incomeRate").addEventListener("load", setIncomeRate());
+}
+
+function setIncomeRate() {
+    var incomeRate = document.getElementById("incomeRate");
+    var incomeBody = document.getElementById("incomeBody");
+    var bodyHTML = "";
+    var rate = 0;
+    for (var p of plotArray) {
+        rate += p.moneyGen;
+        if (p.moneyGen !== 0) {
+            if (p.moneyGen > 0) {
+                bodyHTML += `<tr class="table-success"><th scope="row"><img src="${p.building}" id="icons" alt="bread"></th> <td>+${p.moneyGen}</td> </tr>`;
+            } else {
+                bodyHTML += `<tr class="table-danger"><th scope="row"><img src="${p.building}" id="icons" alt="bread"></th> <td>${p.moneyGen}</td> </tr>`;
+            }
+        }
+    }
+    incomeRate.innerHTML= `$${rate} / sec`;
+    incomeBody.innerHTML = bodyHTML;
+}
 
 function happinessInfo() {
     var progressBar = document.getElementById("happinessBar");
@@ -148,7 +181,6 @@ function happinessInfo() {
     if (happyTotal > 66) {
         smile.src = "images/happy.png";
     }
-    console.log(happyTotal);
     progressBar.style.width = `${happyTotal}%`;
     progressBar.innerHTML = `<h1>${happyTotal}%</h1>`;
     progressBar.style.backgroundColor = "green";

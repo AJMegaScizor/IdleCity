@@ -3,6 +3,7 @@
     height:auto;
 }
 
+
 .col-xs-3-center {
     margin: 30px;
 }
@@ -71,6 +72,7 @@
     height:100px;
 }
 #incomeRate {
+    font-size: 750%;
     color: rgb(0, 255, 0);
     font-weight: bold;
     -webkit-text-stroke: 3px black;
