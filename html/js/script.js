@@ -122,6 +122,7 @@ function buildBank() {
 if (document.getElementById("body")) {
     document.getElementById("body").addEventListener("load", happinessInfo());
 }
+
 function happinessInfo() {
     var progressBar = document.getElementById("happinessBar");
     const smile = document.getElementById("smile");
