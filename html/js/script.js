@@ -119,15 +119,42 @@ function buildBank() {
     window.location.href = "index.html";
 }
 
-function happinessInfo() {
-    const tBody = document.getElementById("body");
-    let body = '<tr mt-5><th scope="row"><img src="images/bread.png" id="icons" alt="bread"></th> <td>bank</td> </tr>';
-    tBody.innerHTML=body;
-
-}
 if (document.getElementById("body")) {
     document.getElementById("body").addEventListener("load", happinessInfo());
 }
+function happinessInfo() {
+    var progressBar = document.getElementById("happinessBar");
+    const smile = document.getElementById("smile");
+    var happyTotal = 0;
+    var tBody = document.getElementById("body");
+    var body = "";
+    for (const p of plotArray) {
+        if (p.happiness !== 0) {
+            happyTotal += p.happiness;
+            if (p.happiness > 0) {
+                body += `<tr class="table-success"><th scope="row"><img src="${p.building}" id="icons" alt="bread"></th> <td>+${p.happiness}</td> </tr>`;
+            } else {
+                body += `<tr class="table-danger"><th scope="row"><img src="${p.building}" id="icons" alt="bread"></th> <td>${p.happiness}</td> </tr>`;
+            }
+        }
+    }
+    if (happyTotal < 33) {
+        smile.src = "images/sad.png";
+    }
+    if (happyTotal > 33) {
+        smile.src = "images/neutral.png";
+    }
+    if (happyTotal > 66) {
+        smile.src = "images/happy.png";
+    }
+    console.log(happyTotal);
+    progressBar.style.width = `${happyTotal}%`;
+    progressBar.innerHTML = `<h1>${happyTotal}%</h1>`;
+    progressBar.style.backgroundColor = "green";
+
+    tBody.innerHTML=body;
+}
+
 
 //localStorage.clear();
 setInterval(changeMoney, 1000);
