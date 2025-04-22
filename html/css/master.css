@@ -3,6 +3,7 @@
     height:auto;
 }
 
+
 .col-xs-3-center {
     margin: 30px;
 }
@@ -56,12 +57,22 @@
     border-radius: 25px;
     background-color: #333333;
     color: white;
-    font-weight: bold;;
+    font-weight: bold;
 }
+.navigation {
+    height: auto;
+    width: 250px;
+    border-radius: 25px;
+    padding: 5px;
+    background-color: #33333300;
+    border-color: #33333300;
+}
+
 #happinessBar {
     height:100px;
 }
 #incomeRate {
+    font-size: 750%;
     color: rgb(0, 255, 0);
     font-weight: bold;
     -webkit-text-stroke: 3px black;
