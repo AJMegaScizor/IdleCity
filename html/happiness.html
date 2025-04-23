@@ -10,11 +10,11 @@
 <body>
     
     <div class="container-fluid position-absolute top-0 bottom-0">
-        <h1 class="display-1 4 text-center" id="happinessTemp">Happiness</h1>
+        <h1 class="display-1 d-flex justify-content-center" id="happinessTemp">Happiness</h1>
         <div class="row text-center align-items-center">
             <div class="col-3">
                 <h1>Citizens</h1>
-                <img src="images/bread.png" id="smile" alt="happiness" style="width: 150px; height:auto; margin-bottom: 20px;">
+                <img src="images/bread.png" class="img-fluid footer-icon" id="smile" alt="happiness" style="width: auto; height:auto; margin-bottom: 20px; max-height: 5vh;">
             </div>
             <div class="col-8">
                 <div class="progress" style="height:auto;">
@@ -22,20 +22,24 @@
                 </div>
             </div>
         </div>
+
+        <div class="table-responsive" style="max-height: 75vh; overflow-y: auto;">
         <table class="table table-striped display-4 ">
-            <thread>
+            <thead>
                 <tr>
                     <th scope="col">Building</th>
                     <th scope="col">Stat</th>
                 </tr>
-            </thread>
+            </thead>
             <tbody id="body">
                 
             </tbody>
         </table>
+        </div>
+
         <div class="container-fluid position-absolute bottom-0 text-center">
             <a href="index.html">
-                <button class="back"><h1 class="display-1">Back</h1></button>
+                <button class="back"><h1 class="display-1 d-flex justify-content-center">Back</h1></button>
             </a>
         </div>
     </div>

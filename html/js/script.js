@@ -56,6 +56,7 @@ function setImage(plotNum) {
     var id = "b" + plotNum;
     const element = document.getElementById(id);
     element.src=plotArray[plotNum].getBuilding();
+    adjustBuildingPadding();
 }
 
 function changeMoney() {
@@ -146,9 +147,9 @@ function setIncomeRate() {
         rate += p.moneyGen;
         if (p.moneyGen !== 0) {
             if (p.moneyGen > 0) {
-                bodyHTML += `<tr class="table-success"><th scope="row"><img src="${p.building}" id="icons" alt="bread"></th> <td>+${p.moneyGen}</td> </tr>`;
+                bodyHTML += `<tr class="table-success"><th scope="row"><img src="${p.building}" class="img-fluid footer-icon" id="icons" alt="building"></th> <td>+${p.moneyGen}</td> </tr>`;
             } else {
-                bodyHTML += `<tr class="table-danger"><th scope="row"><img src="${p.building}" id="icons" alt="bread"></th> <td>${p.moneyGen}</td> </tr>`;
+                bodyHTML += `<tr class="table-danger"><th scope="row"><img src="${p.building}" class="img-fluid footer-icon" id="icons" alt="building"></th> <td>${p.moneyGen}</td> </tr>`;
             }
         }
     }
@@ -188,6 +189,19 @@ function happinessInfo() {
     tBody.innerHTML=body;
 }
 
+function adjustBuildingPadding() {
+    if (document.getElementById('header')) {
+        const header = document.getElementById('header');
+        const footer = document.getElementById('footer');
+        const buildings = document.getElementById('buildings');
+        const headerHeight = header.offsetHeight;
+        const footerHeight = footer.offsetHeight;
+        buildings.style.paddingTop = `${headerHeight + 20}px`;  // Add extra spacing if needed
+        buildings.style.paddingBottom = `${footerHeight + 20}px`;
+    }
+}
+window.addEventListener('load', adjustBuildingPadding);
+window.addEventListener('resize', adjustBuildingPadding);
 
 //localStorage.clear();
 setInterval(changeMoney, 1000);
