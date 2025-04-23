@@ -197,6 +197,7 @@ function upgrade(plotNum) {
 }
 function clearPlotNum() {
     localStorage.setItem("tempPlotNum", null);
+    window.location.href="index.html";
 }
 function build(choice) {
     switch (choice) {
@@ -277,6 +278,10 @@ function happinessInfo() {
     progressBar.style.backgroundColor = "green";
 
     tBody.innerHTML=body;
+}
+
+function defaultBack() {
+    window.location.href="index.html";
 }
 
 function adjustBuildingPadding() {
