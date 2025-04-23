@@ -16,9 +16,89 @@ class plot {
         this.happiness = 0;
     }
     bank() {
+        const cost = 200;
+        if (localStorage[KEY] < cost) {
+            localStorage.setItem("tempPlotNum", null);
+            
+            return;
+        }
+        this.building = "images/bread.png";
+        this.moneyGen = 20;
+        this.happiness = 5;
+        localStorage[KEY] -= cost;
+        localStorage.setItem("plotArray", JSON.stringify(plotArray));
+        localStorage.setItem("tempPlotNum", null);
+        window.location.href = "index.html";
+    }
+    apartment() {
+        const cost = 50;
+        if (localStorage[KEY] < cost) {
+            localStorage.setItem("tempPlotNum", null);
+            return;
+        }
         this.building = "images/apartment.png";
         this.moneyGen = 5;
-        this.happiness = 20;
+        this.happiness = 0;
+        localStorage[KEY] -= cost;
+        localStorage.setItem("plotArray", JSON.stringify(plotArray));
+        localStorage.setItem("tempPlotNum", null);
+        window.location.href = "index.html";
+    }
+    theater() {
+        const cost = 3500;
+        if (localStorage[KEY] < cost) {
+            localStorage.setItem("tempPlotNum", null);
+            return;
+        }
+        this.building = "images/bread.png";
+        this.moneyGen = -10;
+        this.happiness = 25;
+        localStorage[KEY] -= cost;
+        localStorage.setItem("plotArray", JSON.stringify(plotArray));
+        localStorage.setItem("tempPlotNum", null);
+        window.location.href = "index.html";
+    }
+    office() {
+        const cost = 4000;
+        if (localStorage[KEY] < cost) {
+            localStorage.setItem("tempPlotNum", null); 
+            return;
+        }
+        this.building = "images/bread.png";
+        this.moneyGen = 50;
+        this.happiness = -20;
+        localStorage[KEY] -= cost;
+        localStorage.setItem("plotArray", JSON.stringify(plotArray));
+        localStorage.setItem("tempPlotNum", null);
+        window.location.href = "index.html";
+    }
+    school() {
+        const cost = 3000;
+        if (localStorage[KEY] < cost) {
+            localStorage.setItem("tempPlotNum", null);
+            return;
+        }
+        this.building = "images/bread.png";
+        this.moneyGen = -15;
+        this.happiness = 30;
+        localStorage[KEY] -= cost;
+        localStorage.setItem("plotArray", JSON.stringify(plotArray));
+        localStorage.setItem("tempPlotNum", null);
+        window.location.href = "index.html";
+    }
+    supermarket() {
+        const cost = 1000;
+        if (localStorage[KEY] < cost) {
+            localStorage.setItem("tempPlotNum", null);
+            return;
+        }
+        this.building = "images/bread.png";
+        this.moneyGen = 10;
+        this.happiness = 15;
+        localStorage[KEY] -= cost;
+        localStorage.setItem("plotArray", JSON.stringify(plotArray));
+        localStorage.setItem("tempPlotNum", null);
+        window.location.href = "index.html";
     }
 }
 
@@ -45,7 +125,6 @@ function startButton () {
         plotArray[i] = new plot("images/emptylot.png", 0, 0)
     }
     localStorage.setItem("plotArray", JSON.stringify(plotArray));
-    console.log("something");
     localStorage[KEY] = 100;
     window.location.href="index.html";
     hasStarted = String(true);
@@ -119,16 +198,27 @@ function upgrade(plotNum) {
 function clearPlotNum() {
     localStorage.setItem("tempPlotNum", null);
 }
-function buildBank() {
-    if (localStorage[KEY] < 100) {
-        localStorage.setItem("tempPlotNum", null);
-        return;
+function build(choice) {
+    switch (choice) {
+        case 1:
+            plotArray[tempPlotNum].bank();
+            break;
+        case 2:
+            plotArray[tempPlotNum].apartment();
+            break;
+        case 3:
+            plotArray[tempPlotNum].theater();
+            break;
+        case 4:
+            plotArray[tempPlotNum].office();
+            break;
+        case 5:
+            plotArray[tempPlotNum].school();
+            break;
+        case 6:
+            plotArray[tempPlotNum].supermarket();
+            break;
     }
-    localStorage[KEY] -= 100;
-    plotArray[tempPlotNum].bank();
-    localStorage.setItem("plotArray", JSON.stringify(plotArray));
-    localStorage.setItem("tempPlotNum", null);
-    window.location.href = "index.html";
 }
 
 if (document.getElementById("body")) {

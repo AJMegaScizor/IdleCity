@@ -11,57 +11,79 @@
     <div class="container-fluid position-absolute top-0 bottom-0">
         <h1 class="display-1 d-flex justify-content-center">Shop</h1>
         <h1 class ="display-2 text-center" id="money">$000</h1>
-        <table class="table table-striped display-4 ">
-            <thread>
-                <tr>
-                    <th scope="col">Icon</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Cost</th>
-                    <th scope="col">Stats</th>
-                    <th scope="col">Buy</th>
-                </tr>
-            </thread>
-            <tbody>
-                <tr mt-5>
-                    <th scope="row"><img src="images/bread.png" id="icons" alt="bread"></th>
-                    <td>Bank</td>
-                    <td>$100</td>
-                    <td>+$5/Sec</td>
-                    <td><button class="buyButton" id="bankButton" onclick="buildBank()">Buy</button></td>
-                </tr>
-                <tr>
-                    <th scope="row"><img src="images/bread.png" id="icons" alt="bread"></th>
-                    <td>Movie Theater</td>
-                    <td>$100</td>
-                    <td>
-                        <p>+100 Happiness</p>
-                        <p>-$50/Sec</p>
-                    </td>
-                    <td><button class="buyButton" id="bankButton">Buy</button></td>
-                </tr>
-                <tr>
-                    <th scope="row"><img src="images/bread.png" id="icons" alt="bread"></th>
-                    <td>SuperMarket</td>
-                    <td>$100</td>
-                    <td>???</td>
-                    <td><button class="buyButton" id="bankButton">Buy</button></td>
-                </tr>
-                <tr>
-                    <th scope="row"><img src="images/bread.png" id="icons" alt="bread"></th>
-                    <td>School</td>
-                    <td>$100</td>
-                    <td>???</td>
-                    <td><button class="buyButton" id="bankButton">Buy</button></td>
-                </tr>
-                <tr>
-                    <th scope="row"><img src="images/bread.png" id="icons" alt="bread"></th>
-                    <td>Office</td>
-                    <td>$100</td>
-                    <td>???</td>
-                    <td><button class="buyButton" id="bankButton">Buy</button></td>
-                </tr>
-            </tbody>
-        </table>
+
+        <div class="table-responsive" style="max-height: 65vh; overflow-y: auto;">
+            <table class="table table-striped display-4 ">
+                <thread>
+                    <tr>
+                        <th scope="col">Icon</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Cost</th>
+                        <th scope="col">Stats</th>
+                        <th scope="col">Buy</th>
+                    </tr>
+                </thread>
+                <tbody>
+                    <tr mt-5>
+                        <th scope="row"><img src="images/bread.png" id="icons" alt="bread"></th>
+                        <td>Bank</td>
+                        <td>$200</td>
+                        <td>
+                            <p>+$20/Sec</p>
+                            <p>+5% Happiness</p>
+                        </td>
+                        <td><button class="buyButton" id="bankButton" onclick="build(1)">Buy</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><img src="images/apartment.png" id="icons" alt="apartment"></th>
+                        <td>Apartment</td>
+                        <td>$50</td>
+                        <td>+$5/sec</td>
+                        <td><button class="buyButton" id="bankButton" onclick="build(2)">Buy</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><img src="images/bread.png" id="icons" alt="bread"></th>
+                        <td>Theater</td>
+                        <td>$3500</td>
+                        <td>
+                            <p>-$10/sec</p>
+                            <p>+25% Happiness</p>
+                        </td>
+                        <td><button class="buyButton" id="bankButton" onclick="build(3)">Buy</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><img src="images/bread.png" id="icons" alt="bread"></th>
+                        <td>Office</td>
+                        <td>$4000</td>
+                        <td>
+                            <p>+$50/sec</p>
+                            <p>-20% Happiness</p>
+                        </td>
+                        <td><button class="buyButton" id="bankButton" onclick="build(4)">Buy</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><img src="images/bread.png" id="icons" alt="bread"></th>
+                        <td>School</td>
+                        <td>$3000</td>
+                        <td>
+                            <p>-$15/sec</p>
+                            <p>+30% Happiness</p>
+                        </td>
+                        <td><button class="buyButton" id="bankButton" onclick="build(5)">Buy</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><img src="images/bread.png" id="icons" alt="bread"></th>
+                        <td>Supermarket</td>
+                        <td>$1000</td>
+                        <td>
+                            <p>+$10/sec</p>
+                            <p>+15% Happiness</p>
+                        </td>
+                        <td><button class="buyButton" id="bankButton" onclick="build(6)">Buy</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <div class="container-fluid position-absolute bottom-0 text-center">
             <a href="index.html">
