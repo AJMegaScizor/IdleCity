@@ -112,6 +112,10 @@
     margin-bottom: 1rem;
 }
 
+.display-2 {
+    font-size: calc(1rem + 1.5vh);
+    font-weight: bold;
+}
 
 .footer-icon {
     max-height: 10vh;

@@ -119,7 +119,7 @@ if (parsedArray) {
 }
 
 
-function startButton () {
+function newGame () {
     localStorage.clear();
     for (let i = 0; i < plotArray.length; i++) {
         plotArray[i] = new plot("images/emptylot.png", 0, 0)
@@ -129,6 +129,10 @@ function startButton () {
     window.location.href="index.html";
     hasStarted = String(true);
     localStorage.setItem("hasStarted", hasStarted);
+}
+
+function continueGame() {
+    window.location.href="index.html";
 }
 
 function setImage(plotNum) {
@@ -227,6 +231,17 @@ if (document.getElementById("body")) {
 }
 if (document.getElementById("incomeRate")) {
     document.getElementById("incomeRate").addEventListener("load", setIncomeRate());
+}
+if (document.getElementById("continueButton")) {
+    document.getElementById("continueButton").addEventListener("load", setDisabled());
+}
+
+function setDisabled () {
+    var continueB =  document.getElementById("continueButton");
+    if (!JSON.parse(localStorage.getItem("plotArray"))) {
+        continueB.className += " disabled";
+    }
+
 }
 
 function setIncomeRate() {

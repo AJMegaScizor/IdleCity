@@ -8,11 +8,16 @@
     <style type="text/css" media="all">@import "css/master.css";</style>
 </head>
 <body>
-    <div class="container-fluid position-fixed top-0 bottom-0 d-flex justify-content-center align-items-center">
-        <div class="text-center">
-            <h1 class="display-1 money">Super Cool Title</h1>
-            <button class="back btn btn-primary mt-4 footer-icon" onClick="startButton()" aria-label="Start Game">
-                <span class="display-1">Start</span>
+    <div class="container-fluid position-fixed top-0 bottom-0 d-flex flex-column justify-content-center align-items-center" id="background">
+        <h1 class="display-1 money" style="font-size: calc(3rem + 5vh);">IdleCity</h1>
+        <h1 class="display-2">Watch Your City Grow!</h1>
+        <div class="d-flex flex-column align-items-center my-5">
+            
+            <button class="back btn btn-primary mt-4 footer-icon d-flex align-items-center" style="max-height: 6vh;" onClick="newGame()" aria-label="Start Game">
+                <span class="display-1">New Game</span>
+            </button>
+            <button class="back btn btn-secondary mt-4 footer-icon d-flex align-items-center mt-5" style="max-height: 6vh;" id="continueButton" onClick="continueGame()" aria-label="Start Game">
+                <span class="display-1">Continue</span>
             </button>
         </div>
     </div>
