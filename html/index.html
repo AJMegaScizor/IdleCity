@@ -8,243 +8,238 @@
     <style type="text/css" media="all">@import "css/master.css";</style>
 </head>
 <body>
-    <div class="container-fluid position-absolute top-0 bottom-0" id="background">
+    <script src="js/script.js"></script>
 
-        <div class="container-fluid" id="header">
+    <div class="container-fluid position-absolute top-0 bottom-0 d-flex flex-column align-items-center" id="background">
+
+        <div class="container-fluid fixed-top" id="header">
                     <div class="row text-center align-items-center">
                         <div class="col-2 " id="temp">
                             <div id="bCountBox">
                                 <h1 class="display-6 text-white">
                                 Buildings
-                                <div id="building count">
+                                <div id="buildingCount">
                                     0/16
                                 </div>
                                 </h1>
                             </div>
                         </div>
-                        <div class="col-8">
+                        <div class="col-8 d-flex justify-content-center align-items-center">
                             <div id="moneyBox">
                                 <h1 class="display-1" id="money"></h1>
                             </div>
                         </div>
                         <div class="col-2">
                             <h1 class="display-6 text-white">Citizens:</h1>
-                            <img src="images/bread.png" id="happiness" alt="emotion">
+                            <img src="images/sad.png" class="img-fluid" id="happiness" alt="emotion">
                         </div>
                     </div>
         </div>
 
 
-        <div class="container-fluid" id="buildings">
-            <div class="row mt-5">
-                <div class="col-3 text-center ">
+        <div class="container-fluid align-items-center" id="buildings">
+            <div class="row gx-5">
+                <div class="col d-flex justify-content-center">
                     <div class="dropdown">
                         <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/emptylot.png" class="building" alt="building" id="b1">
+                            <img src="images/emptylot.png" class="building img-fluid" alt="building" id="b0" onload="setImage(0)">
                         </button>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"><h1 class="display-5">Upgrade </h1> <h3>Cost: $1000</h3><h3>Stats: +$100 / Sec</h3></a></li>
-                          <li><a class="dropdown-item" href="#"><h1 class="display-6">Demolish</h1></a></li>
+                          <li><a class="dropdown-item" href="#" onClick="upgrade(0)"><h1 class="display-5">Upgrade </h1></a></li>
+                          <li><a class="dropdown-item" href="#"><h1 class="display-6" onClick="demolish(0)">Demolish</h1></a></li>
                         </ul>
                       </div>
                 </div>
-                <div class="col-3 text-center">
+                <div class="col d-flex justify-content-center">
                     <div class="dropdown">
                         <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/emptylot.png" class="building" alt="building">
+                            <img src="images/emptylot.png" class="building img-fluid" alt="building" id="b1" onload="setImage(1)">
                         </button>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"><h1 class="display-5">Upgrade </h1> <h3>Cost: $1000</h3><h3>Stats: +$100 / Sec</h3></a></li>
-                          <li><a class="dropdown-item" href="#"><h1 class="display-6">Demolish</h1></a></li>
+                          <li><a class="dropdown-item" href="#" onClick="upgrade(1)"><h1 class="display-5">Upgrade </h1></a></li>
+                          <li><a class="dropdown-item" href="#"><h1 class="display-6" onClick="demolish(1)">Demolish</h1></a></li>
                         </ul>
                       </div>
                 </div>
-                <div class="col-3 text-center">
+                <div class="col d-flex justify-content-center">
                     <div class="dropdown">
                         <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/emptylot.png" class="building" alt="building">
+                            <img src="images/emptylot.png" class="building img-fluid" alt="building" id="b2" onload="setImage(2)">
                         </button>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"><h1 class="display-5">Upgrade </h1> <h3>Cost: $1000</h3><h3>Stats: +$100 / Sec</h3></a></li>
-                          <li><a class="dropdown-item" href="#"><h1 class="display-6">Demolish</h1></a></li>
+                          <li><a class="dropdown-item" href="#" onClick="upgrade(2)"><h1 class="display-5">Upgrade </h1></a></li>
+                          <li><a class="dropdown-item" href="#"><h1 class="display-6" onClick="demolish(2)">Demolish</h1></a></li>
                         </ul>
                       </div>
                 </div>
-                <div class="col-3 text-center">
+                <div class="col d-flex justify-content-center">
                     <div class="dropdown">
                         <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/emptylot.png" class="building" alt="building">
+                            <img src="images/emptylot.png" class="building img-fluid" alt="building" id="b3" onload="setImage(3)">
                         </button>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"><h1 class="display-5">Upgrade </h1> <h3>Cost: $1000</h3><h3>Stats: +$100 / Sec</h3></a></li>
-                          <li><a class="dropdown-item" href="#"><h1 class="display-6">Demolish</h1></a></li>
-                        </ul>
-                      </div>
-                </div>
-            </div>
-
-            <div class="row mt-5">
-                <div class="col-3 text-center ">
-                    <div class="dropdown">
-                        <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/emptylot.png" class="building" alt="building">
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"><h1 class="display-5">Upgrade </h1> <h3>Cost: $1000</h3><h3>Stats: +$100 / Sec</h3></a></li>
-                          <li><a class="dropdown-item" href="#"><h1 class="display-6">Demolish</h1></a></li>
-                        </ul>
-                      </div>
-                </div>
-                <div class="col-3 text-center">
-                    <div class="dropdown">
-                        <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/emptylot.png" class="building" alt="building">
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"><h1 class="display-5">Upgrade </h1> <h3>Cost: $1000</h3><h3>Stats: +$100 / Sec</h3></a></li>
-                          <li><a class="dropdown-item" href="#"><h1 class="display-6">Demolish</h1></a></li>
-                        </ul>
-                      </div>
-                </div>
-                <div class="col-3 text-center">
-                    <div class="dropdown">
-                        <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/emptylot.png" class="building" alt="building">
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"><h1 class="display-5">Upgrade </h1> <h3>Cost: $1000</h3><h3>Stats: +$100 / Sec</h3></a></li>
-                          <li><a class="dropdown-item" href="#"><h1 class="display-6">Demolish</h1></a></li>
-                        </ul>
-                      </div>
-                </div>
-                <div class="col-3 text-center">
-                    <div class="dropdown">
-                        <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/emptylot.png" class="building" alt="building">
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"><h1 class="display-5">Upgrade </h1> <h3>Cost: $1000</h3><h3>Stats: +$100 / Sec</h3></a></li>
-                          <li><a class="dropdown-item" href="#"><h1 class="display-6">Demolish</h1></a></li>
+                          <li><a class="dropdown-item" href="#"onClick="upgrade(3)"><h1 class="display-5">Upgrade </h1></a></li>
+                          <li><a class="dropdown-item" href="#"><h1 class="display-6" onClick="demolish(3)">Demolish</h1></a></li>
                         </ul>
                       </div>
                 </div>
             </div>
 
-            <div class="row mt-5">
-                <div class="col-3 text-center ">
+            <div class="row gx-5">
+                <div class="col d-flex justify-content-center ">
                     <div class="dropdown">
                         <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/emptylot.png" class="building" alt="building">
+                            <img src="images/emptylot.png" class="building img-fluid" alt="building" id="b4" onload="setImage(4)">
                         </button>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"><h1 class="display-5">Upgrade </h1> <h3>Cost: $1000</h3><h3>Stats: +$100 / Sec</h3></a></li>
-                          <li><a class="dropdown-item" href="#"><h1 class="display-6">Demolish</h1></a></li>
+                          <li><a class="dropdown-item" href="#"onClick="upgrade(4)"><h1 class="display-5">Upgrade </h1></a></li>
+                          <li><a class="dropdown-item" href="#"><h1 class="display-6" onClick="demolish(4)">Demolish</h1></a></li>
                         </ul>
                       </div>
                 </div>
-                <div class="col-3 text-center">
+                <div class="col d-flex justify-content-center">
                     <div class="dropdown">
                         <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/emptylot.png" class="building" alt="building">
+                            <img src="images/emptylot.png" class="building img-fluid" alt="building" id="b5" onload="setImage(5)">
                         </button>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"><h1 class="display-5">Upgrade </h1> <h3>Cost: $1000</h3><h3>Stats: +$100 / Sec</h3></a></li>
-                          <li><a class="dropdown-item" href="#"><h1 class="display-6">Demolish</h1></a></li>
+                          <li><a class="dropdown-item" href="#"onClick="upgrade(5)"><h1 class="display-5">Upgrade </h1></a></li>
+                          <li><a class="dropdown-item" href="#"><h1 class="display-6" onClick="demolish(5)">Demolish</h1></a></li>
                         </ul>
                       </div>
                 </div>
-                <div class="col-3 text-center">
+                <div class="col d-flex justify-content-center">
                     <div class="dropdown">
                         <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/emptylot.png" class="building" alt="building">
+                            <img src="images/emptylot.png" class="building img-fluid" alt="building" id="b6" onload="setImage(6)">
                         </button>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"><h1 class="display-5">Upgrade </h1> <h3>Cost: $1000</h3><h3>Stats: +$100 / Sec</h3></a></li>
-                          <li><a class="dropdown-item" href="#"><h1 class="display-6">Demolish</h1></a></li>
+                          <li><a class="dropdown-item" href="#"onClick="upgrade(6)"><h1 class="display-5">Upgrade </h1></a></li>
+                          <li><a class="dropdown-item" href="#"><h1 class="display-6" onClick="demolish(6)">Demolish</h1></a></li>
                         </ul>
                       </div>
                 </div>
-                <div class="col-3 text-center">
+                <div class="col d-flex justify-content-center">
                     <div class="dropdown">
                         <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/emptylot.png" class="building" alt="building">
+                            <img src="images/emptylot.png" class="building img-fluid" alt="building" id="b7" onload="setImage(7)">
                         </button>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"><h1 class="display-5">Upgrade </h1> <h3>Cost: $1000</h3><h3>Stats: +$100 / Sec</h3></a></li>
-                          <li><a class="dropdown-item" href="#"><h1 class="display-6">Demolish</h1></a></li>
+                          <li><a class="dropdown-item" href="#"onClick="upgrade(7)"><h1 class="display-5">Upgrade </h1></a></li>
+                          <li><a class="dropdown-item" href="#"><h1 class="display-6" onClick="demolish(7)">Demolish</h1></a></li>
+                        </ul>
+                      </div>
+                </div>
+            </div>
+
+            <div class="row gx-5">
+                <div class="col d-flex justify-content-center ">
+                    <div class="dropdown">
+                        <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="images/emptylot.png" class="building img-fluid" alt="building" id="b8" onload="setImage(8)">
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#"onClick="upgrade(8)"><h1 class="display-5">Upgrade </h1></a></li>
+                          <li><a class="dropdown-item" href="#"><h1 class="display-6" onClick="demolish(8)">Demolish</h1></a></li>
+                        </ul>
+                      </div>
+                </div>
+                <div class="col d-flex justify-content-center">
+                    <div class="dropdown">
+                        <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="images/emptylot.png" class="building img-fluid" alt="building" id="b9" onload="setImage(9)">
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#"onClick="upgrade(9)"><h1 class="display-5">Upgrade </h1></a></li>
+                          <li><a class="dropdown-item" href="#"><h1 class="display-6" onClick="demolish(9)">Demolish</h1></a></li>
+                        </ul>
+                      </div>
+                </div>
+                <div class="col d-flex justify-content-center">
+                    <div class="dropdown">
+                        <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="images/emptylot.png" class="building img-fluid" alt="building" id="b10" onload="setImage(10)">
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#"onClick="upgrade(10)"><h1 class="display-5">Upgrade </h1></a></li>
+                          <li><a class="dropdown-item" href="#"><h1 class="display-6" onClick="demolish(10)">Demolish</h1></a></li>
+                        </ul>
+                      </div>
+                </div>
+                <div class="col d-flex justify-content-center">
+                    <div class="dropdown">
+                        <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="images/emptylot.png" class="building img-fluid" alt="building" id="b11" onload="setImage(11)">
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#"onClick="upgrade(11)"><h1 class="display-5">Upgrade </h1></a></li>
+                          <li><a class="dropdown-item" href="#"><h1 class="display-6" onClick="demolish(11)">Demolish</h1></a></li>
                         </ul>
                       </div>
                 </div>
             </div>
             
-            <div class="row mt-5">
-                <div class="col-3 text-center ">
+            <div class="row gx-5">
+                <div class="col d-flex justify-content-center ">
                     <div class="dropdown">
                         <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/emptylot.png" class="building" alt="building">
+                            <img src="images/emptylot.png" class="building img-fluid" alt="building" id="b12" onload="setImage(12)">
                         </button>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"><h1 class="display-5">Upgrade </h1> <h3>Cost: $1000</h3><h3>Stats: +$100 / Sec</h3></a></li>
-                          <li><a class="dropdown-item" href="#"><h1 class="display-6">Demolish</h1></a></li>
+                          <li><a class="dropdown-item" href="#"onClick="upgrade(12)"><h1 class="display-5">Upgrade </h1></a></li>
+                          <li><a class="dropdown-item" href="#"><h1 class="display-6" onClick="demolish(12)">Demolish</h1></a></li>
                         </ul>
                       </div>
                 </div>
-                <div class="col-3 text-center">
+                <div class="col d-flex justify-content-center">
                     <div class="dropdown">
                         <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/emptylot.png" class="building" alt="building">
+                            <img src="images/emptylot.png" class="building img-fluid" alt="building" id="b13" onload="setImage(13)">
                         </button>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"><h1 class="display-5">Upgrade </h1> <h3>Cost: $1000</h3><h3>Stats: +$100 / Sec</h3></a></li>
-                          <li><a class="dropdown-item" href="#"><h1 class="display-6">Demolish</h1></a></li>
+                          <li><a class="dropdown-item" href="#"onClick="upgrade(13)"><h1 class="display-5">Upgrade </h1></a></li>
+                          <li><a class="dropdown-item" href="#"><h1 class="display-6" onClick="demolish(13)">Demolish</h1></a></li>
                         </ul>
                       </div>
                 </div>
-                <div class="col-3 text-center">
+                <div class="col d-flex justify-content-center">
                     <div class="dropdown">
                         <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/emptylot.png" class="building" alt="building">
+                            <img src="images/emptylot.png" class="building img-fluid" alt="building" id="b14" onload="setImage(14)">
                         </button>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"><h1 class="display-5">Upgrade </h1> <h3>Cost: $1000</h3><h3>Stats: +$100 / Sec</h3></a></li>
-                          <li><a class="dropdown-item" href="#"><h1 class="display-6">Demolish</h1></a></li>
+                          <li><a class="dropdown-item" href="#"onClick="upgrade(14)"><h1 class="display-5">Upgrade </h1></a></li>
+                          <li><a class="dropdown-item" href="#"><h1 class="display-6" onClick="demolish(14)">Demolish</h1></a></li>
                         </ul>
                       </div>
                 </div>
-                <div class="col-3 text-center">
+                <div class="col d-flex justify-content-center">
                     <div class="dropdown">
                         <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/emptylot.png" class="building" alt="building">
+                            <img src="images/emptylot.png" class="building img-fluid" alt="building" id="b15" onload="setImage(15)">
                         </button>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"><h1 class="display-5">Upgrade </h1> <h3>Cost: $1000</h3><h3>Stats: +$100 / Sec</h3></a></li>
-                          <li><a class="dropdown-item" href="#"><h1 class="display-6">Demolish</h1></a></li>
+                          <li><a class="dropdown-item" href="#"onClick="upgrade(15)"><h1 class="display-5">Upgrade </h1></a></li>
+                          <li><a class="dropdown-item" href="#"><h1 class="display-6" onClick="demolish(15)">Demolish</h1></a></li>
                         </ul>
                       </div>
                 </div>
             </div>
-
-        
-        <div class="container-fluid mt-5 position-absolute bottom-0" id="footer">
+        </div>
+        <div class="container-fluid mt-5 fixed-bottom" id="footer">
             <div class="row justify-content-center mx-5">
-                <div class="col-2 mx-5">
-                    <a href="shop.html">
-                        <button type="button" class="btn-light"><h1 class="display-2">Shop</h1></button>
-                    </a>
-                </div>
-                <div class="col-2 mx-5">
+                <div class="col-6 col-sm-4 col-md-3 text-center my-2">
                     <a href="happiness.html">
-                        <button type="button" class="btn-light"><h1 class="display-5">Happiness</h1></button>
+                        <button type="button" class="navigation footer-icon"><img src="images/happiness.png" class="img-fluid w-100 w-sm-75 w-md-50 w-lg-25 footer-icon"></button>
                     </a>
                 </div>
-                <div class="col-2 mx-5">
+                <div class="col-6 col-sm-4 col-md-3 text-center my-2">
                     <a href="income.html">
-                        <button type="button" class="btn-light"><h1 class="display-2">Income</h1></button>
+                        <button type="button" class="navigation footer-icon"><img src="images/income.png" class="img-fluid w-100 w-sm-75 w-md-50 w-lg-25 footer-icon"></button>
                     </a>
                 </div>
             </div>
         </div>
-
     </div>
 
 
@@ -253,7 +248,6 @@
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     </script>
-    <script src="js/script.js"></script>
-    
+
 </body>
 </html>

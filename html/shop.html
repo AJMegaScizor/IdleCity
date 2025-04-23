@@ -9,8 +9,8 @@
 </head>
 <body>
     <div class="container-fluid position-absolute top-0 bottom-0">
-        <h1 class="display-1 4 text-center">Shop</h1>
-        <h1 class ="display-2 text-center" id="money"> </h1>
+        <h1 class="display-1 d-flex justify-content-center">Shop</h1>
+        <h1 class ="display-2 text-center" id="money">$000</h1>
         <table class="table table-striped display-4 ">
             <thread>
                 <tr>
@@ -26,8 +26,8 @@
                     <th scope="row"><img src="images/bread.png" id="icons" alt="bread"></th>
                     <td>Bank</td>
                     <td>$100</td>
-                    <td>+$100/Sec</td>
-                    <td><button class="buyButton" id="bankButton" onclick="buildBank(this)">Buy</button></td>
+                    <td>+$5/Sec</td>
+                    <td><button class="buyButton" id="bankButton" onclick="buildBank()">Buy</button></td>
                 </tr>
                 <tr>
                     <th scope="row"><img src="images/bread.png" id="icons" alt="bread"></th>
@@ -65,7 +65,7 @@
 
         <div class="container-fluid position-absolute bottom-0 text-center">
             <a href="index.html">
-                <button class="back"><h1 class="display-1">Back</h1></button>
+                <button class="back" onClick="clearPlotNum()"><h1 class="display-1 d-flex justify-content-center">Back</h1></button>
             </a>
         </div>
 

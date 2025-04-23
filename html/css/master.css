@@ -1,6 +1,15 @@
 .building {
-    width:250px;
-    height:auto;
+    max-height: 12vh; /* or tweak to taste */
+    height: auto;
+    width: auto;
+    object-fit: contain;
+}
+
+#buildings {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .col-xs-3-center {
@@ -15,8 +24,10 @@
 }
 
 #happiness {
+    max-height: 8vh;
     height: auto;
-    width: 200px;
+    width: auto;
+    object-fit: contain;
 }
 #moneyBox {
     background-color: blue;
@@ -56,12 +67,24 @@
     border-radius: 25px;
     background-color: #333333;
     color: white;
-    font-weight: bold;;
+    font-weight: bold;
 }
+.navigation {
+    height: auto;
+    width: auto;
+    border-radius: 25px;
+    padding: 5px;
+    background-color: #33333300;
+    border-color: #33333300;
+}
+
 #happinessBar {
     height:100px;
 }
 #incomeRate {
+    font-size: calc(1.5rem + 1.5vh);
+    /* margin-top: 1rem;
+    margin-bottom: 1rem; */
     color: rgb(0, 255, 0);
     font-weight: bold;
     -webkit-text-stroke: 3px black;
@@ -73,5 +96,20 @@
     3px -3px 0 #000;
 }
 .display-1 {
-    font-size: 1000%;
+    font-size: calc(2rem + 3vh);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.footer-icon {
+    max-height: 10vh;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+  }
+.tablef {
+    height: auto;
+    width: auto;
+    object-fit: contain;
 }
