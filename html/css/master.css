@@ -79,7 +79,7 @@
 }
 
 #happinessBar {
-    height:100px;
+    height:5vh;
 }
 #incomeRate {
     font-size: calc(1.5rem + 1.5vh);
@@ -112,4 +112,21 @@
     height: auto;
     width: auto;
     object-fit: contain;
+}
+
+.statTables {
+    max-height: 80vh; 
+    overflow-y: auto;
+}
+
+.responsive-back-btn {
+    width: 50%; /* or use Bootstrap classes like w-50 */
+    height: 10vh; /* Adjust height relative to screen height */
+    font-size: clamp(1rem, 4vh, 3rem); /* Responsive font */
+}
+
+@media screen and (orientation: landscape) {
+    .statTables {
+        max-height: 50vh;
+    }
 }

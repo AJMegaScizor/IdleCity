@@ -22,7 +22,7 @@ class plot {
             
             return;
         }
-        this.building = "images/bread.png";
+        this.building = "images/bank.png";
         this.moneyGen = 20;
         this.happiness = 5;
         localStorage[KEY] -= cost;
@@ -50,7 +50,7 @@ class plot {
             localStorage.setItem("tempPlotNum", null);
             return;
         }
-        this.building = "images/bread.png";
+        this.building = "images/theater.png";
         this.moneyGen = -10;
         this.happiness = 25;
         localStorage[KEY] -= cost;
@@ -64,7 +64,7 @@ class plot {
             localStorage.setItem("tempPlotNum", null); 
             return;
         }
-        this.building = "images/bread.png";
+        this.building = "images/office.png";
         this.moneyGen = 50;
         this.happiness = -20;
         localStorage[KEY] -= cost;
@@ -78,7 +78,7 @@ class plot {
             localStorage.setItem("tempPlotNum", null);
             return;
         }
-        this.building = "images/bread.png";
+        this.building = "images/school.png";
         this.moneyGen = -15;
         this.happiness = 30;
         localStorage[KEY] -= cost;
@@ -92,7 +92,7 @@ class plot {
             localStorage.setItem("tempPlotNum", null);
             return;
         }
-        this.building = "images/bread.png";
+        this.building = "images/supermarket.png";
         this.moneyGen = 10;
         this.happiness = 15;
         localStorage[KEY] -= cost;
@@ -253,7 +253,7 @@ function happinessInfo() {
     var happyTotal = 0;
     var tBody = document.getElementById("body");
     var body = "";
-    for (const p of plotArray) {
+    for (var p of plotArray) {
         if (p.happiness !== 0) {
             happyTotal += p.happiness;
             if (p.happiness > 0) {
