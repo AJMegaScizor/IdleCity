@@ -28,7 +28,7 @@ class plot {
         localStorage[KEY] -= cost;
         localStorage.setItem("plotArray", JSON.stringify(plotArray));
         localStorage.setItem("tempPlotNum", null);
-        window.location.href = "index.html";
+        window.location.href = "gamePage.html";
     }
     apartment() {
         const cost = 50;
@@ -42,7 +42,7 @@ class plot {
         localStorage[KEY] -= cost;
         localStorage.setItem("plotArray", JSON.stringify(plotArray));
         localStorage.setItem("tempPlotNum", null);
-        window.location.href = "index.html";
+        window.location.href = "gamePage.html";
     }
     theater() {
         const cost = 3500;
@@ -56,7 +56,7 @@ class plot {
         localStorage[KEY] -= cost;
         localStorage.setItem("plotArray", JSON.stringify(plotArray));
         localStorage.setItem("tempPlotNum", null);
-        window.location.href = "index.html";
+        window.location.href = "gamePage.html";
     }
     office() {
         const cost = 4000;
@@ -70,7 +70,7 @@ class plot {
         localStorage[KEY] -= cost;
         localStorage.setItem("plotArray", JSON.stringify(plotArray));
         localStorage.setItem("tempPlotNum", null);
-        window.location.href = "index.html";
+        window.location.href = "gamePage.html";
     }
     school() {
         const cost = 3000;
@@ -84,7 +84,7 @@ class plot {
         localStorage[KEY] -= cost;
         localStorage.setItem("plotArray", JSON.stringify(plotArray));
         localStorage.setItem("tempPlotNum", null);
-        window.location.href = "index.html";
+        window.location.href = "gamePage.html";
     }
     supermarket() {
         const cost = 1000;
@@ -98,7 +98,7 @@ class plot {
         localStorage[KEY] -= cost;
         localStorage.setItem("plotArray", JSON.stringify(plotArray));
         localStorage.setItem("tempPlotNum", null);
-        window.location.href = "index.html";
+        window.location.href = "gamePage.html";
     }
 }
 
@@ -126,13 +126,13 @@ function newGame () {
     }
     localStorage.setItem("plotArray", JSON.stringify(plotArray));
     localStorage[KEY] = 100;
-    window.location.href="index.html";
+    window.location.href="gamePage.html";
     hasStarted = String(true);
     localStorage.setItem("hasStarted", hasStarted);
 }
 
 function continueGame() {
-    window.location.href="index.html";
+    window.location.href="gamePage.html";
 }
 
 function setImage(plotNum) {
@@ -157,6 +157,9 @@ function changeMoney() {
                 happiness += p.happiness
             }
         }
+        if (happiness < 0) {
+            window.location.href="gameOver.html";
+        }
         const emoji = document.getElementById("happiness");
         const element = document.getElementById("money");
         if (emoji) {
@@ -180,7 +183,7 @@ function changeMoney() {
             }
             counter.innerHTML = `${count} / 16`;
         }
-
+        rate = Math.trunc(rate * (1 + (happiness / 100)));
         if (element) {
             element.innerHTML = "$" + num;
         }
@@ -201,7 +204,7 @@ function upgrade(plotNum) {
 }
 function clearPlotNum() {
     localStorage.setItem("tempPlotNum", null);
-    window.location.href="index.html";
+    window.location.href="gamePage.html";
 }
 function build(choice) {
     switch (choice) {
@@ -235,6 +238,18 @@ if (document.getElementById("incomeRate")) {
 if (document.getElementById("continueButton")) {
     document.getElementById("continueButton").addEventListener("load", setDisabled());
 }
+if (document.getElementById("happinessM")) {
+    document.getElementById("happinessM").addEventListener("load", updateHappinessM());
+}
+
+function updateHappinessM() {
+    var happinessM = document.getElementById("happinessM");
+    var h = 0;
+    for (var p of plotArray) {
+        h += p.happiness;
+    }
+    happinessM.innerHTML = `${h}%`;
+}
 
 function setDisabled () {
     var continueB =  document.getElementById("continueButton");
@@ -247,10 +262,13 @@ function setDisabled () {
 function setIncomeRate() {
     var incomeRate = document.getElementById("incomeRate");
     var incomeBody = document.getElementById("incomeBody");
+    var happyBoost = document.getElementById("happyMultiplier");
     var bodyHTML = "";
+    var happiness = 0;
     var rate = 0;
     for (var p of plotArray) {
         rate += p.moneyGen;
+        happiness += p.happiness;
         if (p.moneyGen !== 0) {
             if (p.moneyGen > 0) {
                 bodyHTML += `<tr class="table-success"><th scope="row"><img src="${p.building}" class="img-fluid footer-icon" id="icons" alt="building"></th> <td>+${p.moneyGen}</td> </tr>`;
@@ -259,7 +277,9 @@ function setIncomeRate() {
             }
         }
     }
-    incomeRate.innerHTML= `$${rate} / sec`;
+    rate = Math.trunc(rate * (1 + (happiness / 100)));
+    happyBoost.innerHTML = `${happiness}%`;
+    incomeRate.innerHTML = `$${rate} / sec`;
     incomeBody.innerHTML = bodyHTML;
 }
 
@@ -296,7 +316,7 @@ function happinessInfo() {
 }
 
 function defaultBack() {
-    window.location.href="index.html";
+    window.location.href="gamePage.html";
 }
 
 function adjustBuildingPadding() {

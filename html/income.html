@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IdleCity</title>
-    <style type="text/css" media="all">@import "css/master.css";</style>
+    <style media="all">@import "css/master.css";</style>
 </head>
 <body>
     <div class="container-fluid position-fixed top-0 bottom-0">
-        <h1 class="display-1 4 d-flex justify-content-center">Income</h1>
-        <h1 class="display-2 4 text-center mt-5" id="incomeRate">+$25 / Sec</h1>
-        
+        <h1 class="display-1 d-flex justify-content-center">Income</h1>
+        <h1 class="display-2 text-center" id="incomeRate">+$25 / Sec</h1>
+        <h1 class="display-2 text-center" >Happiness Boost: <span class="display-2 money" id="happyMultiplier">+0%</span>  </h1>
+
         <div class="table-responsive statTables">
             <table class="table table-striped display-4 ">
                 <thead>
@@ -27,7 +28,7 @@
 
 
         <div class="container-fluid position-absolute bottom-0 d-flex justify-content-center align-items-center">
-            <button class="back footer-icon d-flex justify-content-center align-items-center" onclick="defaultBack()"><h1 class="display-1 d-flex justify-content-center">Back</h1></button>
+            <button class="back footer-icon d-flex justify-content-center align-items-center" onclick="defaultBack()"><span class="display-1 d-flex justify-content-center">Back</span></button>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
