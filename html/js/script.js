@@ -293,9 +293,9 @@ function happinessInfo() {
         if (p.happiness !== 0) {
             happyTotal += p.happiness;
             if (p.happiness > 0) {
-                body += `<tr class="table-success"><th scope="row"><img src="${p.building}" id="icons" alt="bread"></th> <td>+${p.happiness}</td> </tr>`;
+                body += `<tr class="table-success"><th scope="row"><img src="${p.building}" id="icons" class="img-fluid footer-icon" alt="bread"></th> <td>+${p.happiness}</td> </tr>`;
             } else {
-                body += `<tr class="table-danger"><th scope="row"><img src="${p.building}" id="icons" alt="bread"></th> <td>${p.happiness}</td> </tr>`;
+                body += `<tr class="table-danger"><th scope="row"><img src="${p.building}" id="icons" class="img-fluid footer-icon" alt="bread"></th> <td>${p.happiness}</td> </tr>`;
             }
         }
     }

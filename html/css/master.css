@@ -34,10 +34,9 @@
     border-radius: 25px;
 }
 #money {
-    
     color: rgb(0, 255, 0);
     font-weight: bold;
-    -webkit-text-stroke: 3px black;
+    -webkit-text-stroke: .01vw black;
     font-family:sans-serif, Arial;
     text-shadow:
     3px 3px 0 #000,
