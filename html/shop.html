@@ -8,79 +8,79 @@
     <style media="all">@import "css/master.css";</style>
 </head>
 <body>
-    <div class="container-fluid position-fixed top-0 bottom-0">
+    <div class="container-fluid position-fixed top-0 bottom-0 d-flex flex-column" style="padding-bottom:10vh;">
         <h1 class="display-1 d-flex justify-content-center">Shop</h1>
         <h1 class ="display-2 text-center" id="money">$000</h1>
-        <h1 class="display-2 text-center">Happiness: <span class="display-2 money" id="happinessM">0%</span></h1>
+        <h1 class="display-2 text-center">Happiness: <span class="display-2" id="happinessM">0%</span></h1>
 
         <div class="table-responsive statTables" >
             <table class="table table-striped display-4 ">
                 <thead>
                     <tr>
-                        <th scope="col">Icon</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Cost</th>
-                        <th scope="col">Stats</th>
-                        <th scope="col">Buy</th>
+                        <th scope="col" class="display-2">Icon</th>
+                        <th scope="col" class="display-2">Name</th>
+                        <th scope="col" class="display-2">Cost</th>
+                        <th scope="col" class="display-2">Stats</th>
+                        <th scope="col" class="display-2">Buy</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row"><img src="images/bank.png" class="icons" alt="Bank"></th>
-                        <td>Bank</td>
-                        <td>$200</td>
+                        <th scope="row"><img src="images/bank.png" class="table-icon" alt="Bank"></th>
+                        <td class="display-3">Bank</td>
+                        <td class="display-3">$200</td>
                         <td>
-                            <p>+$20/Sec</p>
-                            <p>+5% Happiness</p>
+                            <p class="display-3">+$20/Sec</p>
+                            <p class="display-3">-5% Happiness</p>
                         </td>
-                        <td><button class="buyButton" onclick="build(1)">Buy</button></td>
+                        <td><button class="buyButton table-icon d-flex justify-content-center " onclick="build(1)"><span class="display-3">Buy</span></button></td>
                     </tr>
                     <tr>
-                        <th scope="row"><img src="images/apartment.png" class="icons" alt="Apartment"></th>
-                        <td>Apartment</td>
-                        <td>$50</td>
-                        <td>+$5/sec</td>
-                        <td><button class="buyButton" onclick="build(2)">Buy</button></td>
+                        <th scope="row"><img src="images/apartment.png" class="table-icon" alt="Apartment"></th>
+                        <td class="display-3">Apartment</td>
+                        <td class="display-3">$50</td>
+                        <td class="display-3">+$5/sec</td>
+                        <td><button class="buyButton table-icon d-flex justify-content-center" onclick="build(2)"><span class="display-3">Buy</span></button></td>
                     </tr>
                     <tr>
-                        <th scope="row"><img src="images/theater.png" class="icons" alt="Theater"></th>
-                        <td>Theater</td>
-                        <td>$3500</td>
+                        <th scope="row"><img src="images/theater.png" class="table-icon" alt="Theater"></th>
+                        <td class="display-3">Theater</td>
+                        <td class="display-3">$3500</td>
                         <td>
-                            <p>-$10/sec</p>
-                            <p>+25% Happiness</p>
+                            <p class="display-3">-$10/sec</p>
+                            <p class="display-3">+25% Happiness</p>
                         </td>
-                        <td><button class="buyButton" onclick="build(3)">Buy</button></td>
+                        <td><button class="buyButton table-icon d-flex justify-content-center" onclick="build(3)"><span class="display-3">Buy</span></button></td>
                     </tr>
                     <tr>
-                        <th scope="row"><img src="images/office.png" class="icons" alt="Office"></th>
-                        <td>Office</td>
-                        <td>$4000</td>
-                        <td>
-                            <p>+$50/sec</p>
-                            <p>-20% Happiness</p>
+                        <th scope="row"><img src="images/office.png" class="table-icon" alt="Office"></th>
+                        <td class="display-3">Office</td>
+                        <td class="display-3">$4000</td>
+                        <td class="display-3">
+                            <p class="display-3">+$50/sec</p>
+                            <p class="display-3">-20% Happiness</p>
                         </td>
-                        <td><button class="buyButton" onclick="build(4)">Buy</button></td>
+                        <td><button class="buyButton table-icon d-flex justify-content-center" onclick="build(4)"><span class="display-3">Buy</span></button></td>
                     </tr>
                     <tr>
-                        <th scope="row"><img src="images/school.png" class="icons" alt="School"></th>
-                        <td>School</td>
-                        <td>$3000</td>
+                        <th scope="row"><img src="images/school.png" class="table-icon" alt="School"></th>
+                        <td class="display-3">School</td>
+                        <td class="display-3">$3000</td>
                         <td>
-                            <p>-$15/sec</p>
-                            <p>+30% Happiness</p>
+                            <p class="display-3">-$15/sec</p>
+                            <p class="display-3">+30% Happiness</p>
                         </td>
-                        <td><button class="buyButton" onclick="build(5)">Buy</button></td>
+                        <td><button class="buyButton table-icon d-flex justify-content-center" onclick="build(5)"><span class="display-3">Buy</span></button></td>
                     </tr>
                     <tr>
-                        <th scope="row"><img src="images/supermarket.png" class="icons" alt="Supermarket"></th>
-                        <td>Supermarket</td>
-                        <td>$1000</td>
+                        <th scope="row"><img src="images/supermarket.png" class="table-icon" alt="Supermarket"></th>
+                        <td class="display-3">Supermarket</td>
+                        <td class="display-3">$1000</td>
                         <td>
-                            <p>+$10/sec</p>
-                            <p>+15% Happiness</p>
+                            <p class="display-3">+$10/sec</p>
+                            <p class="display-3">+15% Happiness</p>
                         </td>
-                        <td><button class="buyButton" onclick="build(6)">Buy</button></td>
+                        <td><button class="buyButton table-icon d-flex justify-content-center" onclick="build(6)"><span class="display-3">Buy</span></button></td>
                     </tr>
                 </tbody>
             </table>

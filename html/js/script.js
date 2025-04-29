@@ -24,7 +24,7 @@ class plot {
         }
         this.building = "images/bank.png";
         this.moneyGen = 20;
-        this.happiness = 5;
+        this.happiness = -5;
         localStorage[KEY] -= cost;
         localStorage.setItem("plotArray", JSON.stringify(plotArray));
         localStorage.setItem("tempPlotNum", null);
@@ -271,9 +271,9 @@ function setIncomeRate() {
         happiness += p.happiness;
         if (p.moneyGen !== 0) {
             if (p.moneyGen > 0) {
-                bodyHTML += `<tr class="table-success"><th scope="row"><img src="${p.building}" class="img-fluid footer-icon" id="icons" alt="building"></th> <td>+${p.moneyGen}</td> </tr>`;
+                bodyHTML += `<tr class="table-success"><th scope="row"><img src="${p.building}" class="img-fluid table-icon" id="icons" alt="building"></th> <td class="display-3">+${p.moneyGen}</td> </tr>`;
             } else {
-                bodyHTML += `<tr class="table-danger"><th scope="row"><img src="${p.building}" class="img-fluid footer-icon" id="icons" alt="building"></th> <td>${p.moneyGen}</td> </tr>`;
+                bodyHTML += `<tr class="table-danger"><th scope="row"><img src="${p.building}" class="img-fluid table-icon" id="icons" alt="building"></th> <td class="display-3">${p.moneyGen}</td> </tr>`;
             }
         }
     }
@@ -293,9 +293,9 @@ function happinessInfo() {
         if (p.happiness !== 0) {
             happyTotal += p.happiness;
             if (p.happiness > 0) {
-                body += `<tr class="table-success"><th scope="row"><img src="${p.building}" id="icons" class="img-fluid footer-icon" alt="bread"></th> <td>+${p.happiness}</td> </tr>`;
+                body += `<tr class="table-success"><th scope="row"><img src="${p.building}" id="icons" class="img-fluid table-icon" alt="bread"></th> <td class="display-3">+${p.happiness}</td> </tr>`;
             } else {
-                body += `<tr class="table-danger"><th scope="row"><img src="${p.building}" id="icons" class="img-fluid footer-icon" alt="bread"></th> <td>${p.happiness}</td> </tr>`;
+                body += `<tr class="table-danger"><th scope="row"><img src="${p.building}" id="icons" class="img-fluid table-icon" alt="bread"></th> <td class="display-3">${p.happiness}</td> </tr>`;
             }
         }
     }

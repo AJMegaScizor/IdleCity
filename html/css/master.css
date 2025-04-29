@@ -45,8 +45,7 @@
     3px -3px 0 #000;
 }
 #background {
-    background-color: lightgreen;
-    
+    background-image: url("../images/grass.png");
 }
 #gameOver {
     background-color: lightcoral;
@@ -119,6 +118,9 @@
     font-size: calc(1rem + 1.5vh);
     font-weight: bold;
 }
+.display-3 {
+    font-size: calc(1rem + 1vh);
+}
 
 .footer-icon {
     max-height: 10vh;
@@ -126,6 +128,12 @@
     width: auto;
     object-fit: contain;
   }
+.table-icon {
+    max-height: 5vh;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+}
 .tablef {
     height: auto;
     width: auto;
@@ -147,4 +155,8 @@
 .custom-popover {
     --bs-popover-max-width: 500px;
     font-size: calc(.8rem + .5vh);
-  }
+}
+
+.dropdown-menu {
+    z-index: 9999;
+}
